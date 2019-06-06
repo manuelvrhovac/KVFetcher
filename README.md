@@ -36,37 +36,34 @@ Defines how background fetching will be executed - range, offset, direction, pri
 ### Flag fetcher
 Flag fetcher will be a subclass of cached KVFetcher. It will fetch an image for specific country iso string. For example, using "de" for key will fetch german flag image (value) and automatically cache it into the cacher's [Key:Value] dictionary. Next time "de" is used to fetch, closure will return immediately with the cached value.
 
-
-
-
-
-```swift
-/// Fetches flag image for iso code.
+```
 class FlagFetcher: KVFetcher<String, UIImage>.Caching {
+    
+    override func _executeFetchValue(for key: String, completion: ((UIImage?) -> Void)!) {
+        let url = URL(string: "https://www.countryflags.io/\(key)/shiny/64.png")!
+        guard let data = try? Data(contentsOf: url) else {
+            print("Couldn't fetch data from internet")
+            return completion(nil)
+        }
+        guard let image = UIImage(data: data) else {
+            print("Fetched data is not image")
+            return completion(nil)
+        }
+        completion(image)
+    }
+}
+```
 
-override func _executeFetchValue(for key: String, completion: ((UIImage?) -> Void)!) {
-let url = URL(string: "https://www.countryflags.io/\(key)/shiny/64.png")!
-guard let data = try? Data(contentsOf: url) else {
-print("Couldn't fetch data from internet")
-return completion(nil)
-}
-guard let image = UIImage(data: data) else {
-print("Fetched data is not image")
-return completion(nil)
-}
-completion(image)
-}
-}
+Let's define a FlagFetcher class that can hold 100 flag images inside its cacher storage. Then we can fatch the flag image for Germany:
 
-func testFlagFetcher() {
+```
 let flagFetcher = FlagFetcher(cacher: .init(limes: .count(max: 100)))
 
 flagFetcher.fetchValue(for: "de") { flagImage in
-guard let flagImage = flagImage else {
-return print("Couldn't fetch flag image for Germany!")
-}
-print("Got flag image: \(flagImage)!")
-}
+    guard let flagImage = flagImage else {
+        return print("Couldn't fetch flag image for Germany!")
+    }
+    print("Got flag image: \(flagImage)!")
 }
 ```
 
