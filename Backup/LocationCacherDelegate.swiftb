@@ -1,0 +1,98 @@
+//
+//  LocationCacher.swift
+//  Wideshow4
+//
+//  Created by Manuel Vrhovac on 08/10/2018.
+//  Copyright © 2018 Manuel Vrhovac. All rights reserved.
+//
+
+import Foundation
+import CoreLocation
+
+/*
+func use() {
+    let emoji = EmojiCacherDelegate()
+    let emojiCacher = emoji.cacher
+    
+    
+    func doit() {
+        let keys = ["lime", "sad", "apple", "hamburger", "pizza", "gym", "sun", "manuel", "ramen", "angry", "drink"]
+        if emojiCacher.values.count == keys.count {
+            return
+        }
+        let key = keys.random ?? "smile"
+        print("\nFor \(key): ", separator: "", terminator: "")
+        let time = Date()
+        emojiCacher.transform(key, method: .asap) { (value,type) in
+            print(" -> \(value) in \((Date().timeIntervalSince(time)*10).rounded()/10) seconds")
+            delay(0.1) {
+                doit()
+                
+            }
+        }
+    }
+    doit()
+    
+}
+
+final class EmojiCacherDelegate: ElementCacherDelegate {
+    
+    typealias Element = String
+    typealias Result = String
+    typealias Cacher = ElementCacher<EmojiCacherDelegate>
+    
+    let cacher: Cacher = Cacher()
+
+    func approximateSizeCalculator(of key: Keylement, for cacher: Cacher) -> Double {
+        return 0
+    }
+    
+    func maxSizeOfTransformBlock(for cacher: Cacher) -> Double {
+        return 0
+    }
+    
+    func maxSizeOfQuickTransformBlock(for cacher: Cacher) -> Double {
+        return 0
+    }
+    
+    func quickTransform(_ key: Keylement, for cacher: Cacher, completion: @escaping Completion) {
+        downloadEmoji(forQuery: key, completion: { (emoji, _) in
+            completion(emoji, .quick)
+        })
+    }
+    
+    func transform(_ key: Keylement, for cacher: Cacher, completion: @escaping Completion) {
+        downloadEmoji(forQuery: key, completion: { (emoji, _) in
+            completion(emoji, .full)
+        })
+    }
+    
+    func downloadEmoji(forQuery query: String, completion: @escaping Completion) {
+        var link = "https://emojipedia.org/search/?q="
+        link += query.components(separatedBy: " ").joined(separator: "+")
+        guard let url = URL(string: link) else { return }
+        backgroundThread {
+            let string = try! String.init(contentsOf: url)
+            delay(0.5) {
+                
+                var res = string
+                    .from("<ol class=\"search-values\">").until("<h2>Categories</h2>")
+                    .components(separatedBy: "<span class=\"emoji\">")
+                    .map { $0.until("</span>") }
+                    .filter { $0.count > 0 && $0.count < 4}
+                    .first ?? "✖️"
+                if string.contains("Perhaps try a less specific search phrase") {
+                    res = "✖️"
+                }
+                completion(res, .full)
+            }
+        }
+        
+    }
+    
+    
+
+}
+
+*/
+

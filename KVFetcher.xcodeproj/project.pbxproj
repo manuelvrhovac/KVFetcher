@@ -1,0 +1,564 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		648138D622A9178200DB3021 /* KVFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 648138D422A9178200DB3021 /* KVFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6481390722A9179300DB3021 /* FetcherPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648138DF22A9179200DB3021 /* FetcherPriority.swift */; };
+		6481390822A9179300DB3021 /* ActiveFetchingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648138E022A9179200DB3021 /* ActiveFetchingOptions.swift */; };
+		6481390922A9179300DB3021 /* Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648138E222A9179200DB3021 /* Fetcher.swift */; };
+		6481391022A9179300DB3021 /* FetcherProtocol+C.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648138EB22A9179200DB3021 /* FetcherProtocol+C.swift */; };
+		6481391122A9179300DB3021 /* FetcherProtocol+A.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648138EC22A9179200DB3021 /* FetcherProtocol+A.swift */; };
+		6481391222A9179300DB3021 /* FetcherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648138ED22A9179200DB3021 /* FetcherProtocol.swift */; };
+		6481391422A9179300DB3021 /* Syncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648138F022A9179200DB3021 /* Syncer.swift */; };
+		6481391522A9179300DB3021 /* KeyValueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648138F122A9179200DB3021 /* KeyValueProtocol.swift */; };
+		6481391622A9179300DB3021 /* KVFetcher+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648138F222A9179200DB3021 /* KVFetcher+Extensions.swift */; };
+		6481392122A9179300DB3021 /* Limes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481390022A9179200DB3021 /* Limes.swift */; };
+		6481392222A9179300DB3021 /* CachingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481390122A9179200DB3021 /* CachingOptions.swift */; };
+		6481392322A9179300DB3021 /* Cacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481390322A9179300DB3021 /* Cacher.swift */; };
+		6481392422A9179300DB3021 /* CacherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481390522A9179300DB3021 /* CacherProtocol.swift */; };
+		6481394722A917D400DB3021 /* Ext+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481393D22A917D400DB3021 /* Ext+String.swift */; };
+		6481394F22A917D400DB3021 /* Ext+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481394522A917D400DB3021 /* Ext+Foundation.swift */; };
+		6481395222A9185B00DB3021 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6481395122A9185B00DB3021 /* .swiftlint.yml */; };
+		6481395422A9186F00DB3021 /* .swiftlint.yml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6481395122A9185B00DB3021 /* .swiftlint.yml */; };
+		6481395622A9187B00DB3021 /* .swiftlint.yml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6481395122A9185B00DB3021 /* .swiftlint.yml */; };
+		64CF3AE922A91B4B00871ACE /* KVFetcher.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 648138D122A9178200DB3021 /* KVFetcher.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6481395322A9186A00DB3021 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "/Users/Manuel 1/Documents/Development 2019/Wideshow4/QuickPicker";
+			dstSubfolderSpec = 0;
+			files = (
+				6481395422A9186F00DB3021 /* .swiftlint.yml in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6481395522A9187600DB3021 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "/Users/Manuel 1/Documents/Development 2019/Wideshow4";
+			dstSubfolderSpec = 0;
+			files = (
+				6481395622A9187B00DB3021 /* .swiftlint.yml in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6481395822A918A000DB3021 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "/Users/Manuel 1/Documents/Development 2019/KVFetcher";
+			dstSubfolderSpec = 0;
+			files = (
+				64CF3AE922A91B4B00871ACE /* KVFetcher.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		648138D122A9178200DB3021 /* KVFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KVFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		648138D422A9178200DB3021 /* KVFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVFetcher.h; sourceTree = "<group>"; };
+		648138D522A9178200DB3021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		648138DF22A9179200DB3021 /* FetcherPriority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetcherPriority.swift; sourceTree = "<group>"; };
+		648138E022A9179200DB3021 /* ActiveFetchingOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveFetchingOptions.swift; sourceTree = "<group>"; };
+		648138E222A9179200DB3021 /* Fetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
+		648138E422A9179200DB3021 /* GeocodingFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeocodingFetcher.swift; sourceTree = "<group>"; };
+		648138E522A9179200DB3021 /* EFBlockFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFBlockFetcher.swift; sourceTree = "<group>"; };
+		648138E622A9179200DB3021 /* +++EFGenericFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "+++EFGenericFetcher.swift"; sourceTree = "<group>"; };
+		648138E722A9179200DB3021 /* EFWebImageFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFWebImageFetcher.swift; sourceTree = "<group>"; };
+		648138E822A9179200DB3021 /* WebImageByProto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebImageByProto.swift; sourceTree = "<group>"; };
+		648138E922A9179200DB3021 /* EFCustomFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFCustomFetcher.swift; sourceTree = "<group>"; };
+		648138EB22A9179200DB3021 /* FetcherProtocol+C.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FetcherProtocol+C.swift"; sourceTree = "<group>"; };
+		648138EC22A9179200DB3021 /* FetcherProtocol+A.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FetcherProtocol+A.swift"; sourceTree = "<group>"; };
+		648138ED22A9179200DB3021 /* FetcherProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetcherProtocol.swift; sourceTree = "<group>"; };
+		648138F022A9179200DB3021 /* Syncer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syncer.swift; sourceTree = "<group>"; };
+		648138F122A9179200DB3021 /* KeyValueProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValueProtocol.swift; sourceTree = "<group>"; };
+		648138F222A9179200DB3021 /* KVFetcher+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVFetcher+Extensions.swift"; sourceTree = "<group>"; };
+		648138F422A9179200DB3021 /* ElementProvider.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ElementProvider.swiftb; sourceTree = "<group>"; };
+		648138F522A9179200DB3021 /* CacherProtocol.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CacherProtocol.swiftb; sourceTree = "<group>"; };
+		648138F622A9179200DB3021 /* ElementCacherDelegate.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ElementCacherDelegate.swiftb; sourceTree = "<group>"; };
+		648138F722A9179200DB3021 /* IndexGenOld.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IndexGenOld.swiftb; sourceTree = "<group>"; };
+		648138F822A9179200DB3021 /* IndexGenerator.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IndexGenerator.swiftb; sourceTree = "<group>"; };
+		648138F922A9179200DB3021 /* ElementCacher.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ElementCacher.swiftb; sourceTree = "<group>"; };
+		648138FA22A9179200DB3021 /* LocationCacherDelegate.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LocationCacherDelegate.swiftb; sourceTree = "<group>"; };
+		648138FB22A9179200DB3021 /* NextElementCacher.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NextElementCacher.swiftb; sourceTree = "<group>"; };
+		648138FC22A9179200DB3021 /* EFPrecacher.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EFPrecacher.swiftb; sourceTree = "<group>"; };
+		648138FD22A9179200DB3021 /* EFFectherBackup.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EFFectherBackup.swiftb; sourceTree = "<group>"; };
+		6481390022A9179200DB3021 /* Limes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Limes.swift; sourceTree = "<group>"; };
+		6481390122A9179200DB3021 /* CachingOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachingOptions.swift; sourceTree = "<group>"; };
+		6481390322A9179300DB3021 /* Cacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cacher.swift; sourceTree = "<group>"; };
+		6481390522A9179300DB3021 /* CacherProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacherProtocol.swift; sourceTree = "<group>"; };
+		6481393D22A917D400DB3021 /* Ext+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ext+String.swift"; sourceTree = "<group>"; };
+		6481394522A917D400DB3021 /* Ext+Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ext+Foundation.swift"; sourceTree = "<group>"; };
+		6481395122A9185B00DB3021 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		64CF3AEA22A91BD500871ACE /* KVFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KVFetcher.framework; sourceTree = "<group>"; };
+		64CF3B4322A9367200871ACE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		648138CE22A9178200DB3021 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		648138C722A9178200DB3021 = {
+			isa = PBXGroup;
+			children = (
+				64CF3B4322A9367200871ACE /* README.md */,
+				64CF3AEA22A91BD500871ACE /* KVFetcher.framework */,
+				6481395122A9185B00DB3021 /* .swiftlint.yml */,
+				6481393C22A917D400DB3021 /* SwiftExtensions */,
+				648138D322A9178200DB3021 /* KVFetcher */,
+				648138F322A9179200DB3021 /* Backup */,
+				648138D222A9178200DB3021 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		648138D222A9178200DB3021 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				648138D122A9178200DB3021 /* KVFetcher.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		648138D322A9178200DB3021 /* KVFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				648138DD22A9179200DB3021 /* Fetcher */,
+				648138FE22A9179200DB3021 /* Cacher */,
+				648138F022A9179200DB3021 /* Syncer.swift */,
+				648138F122A9179200DB3021 /* KeyValueProtocol.swift */,
+				648138F222A9179200DB3021 /* KVFetcher+Extensions.swift */,
+				648138D422A9178200DB3021 /* KVFetcher.h */,
+				648138D522A9178200DB3021 /* Info.plist */,
+			);
+			path = KVFetcher;
+			sourceTree = "<group>";
+		};
+		648138DD22A9179200DB3021 /* Fetcher */ = {
+			isa = PBXGroup;
+			children = (
+				648138E222A9179200DB3021 /* Fetcher.swift */,
+				648138ED22A9179200DB3021 /* FetcherProtocol.swift */,
+				648138EB22A9179200DB3021 /* FetcherProtocol+C.swift */,
+				648138EC22A9179200DB3021 /* FetcherProtocol+A.swift */,
+				648138DE22A9179200DB3021 /* Other Classes */,
+			);
+			path = Fetcher;
+			sourceTree = "<group>";
+		};
+		648138DE22A9179200DB3021 /* Other Classes */ = {
+			isa = PBXGroup;
+			children = (
+				648138DF22A9179200DB3021 /* FetcherPriority.swift */,
+				648138E022A9179200DB3021 /* ActiveFetchingOptions.swift */,
+			);
+			path = "Other Classes";
+			sourceTree = "<group>";
+		};
+		648138E322A9179200DB3021 /* Backup */ = {
+			isa = PBXGroup;
+			children = (
+				648138E422A9179200DB3021 /* GeocodingFetcher.swift */,
+				648138E522A9179200DB3021 /* EFBlockFetcher.swift */,
+				648138E622A9179200DB3021 /* +++EFGenericFetcher.swift */,
+				648138E722A9179200DB3021 /* EFWebImageFetcher.swift */,
+				648138E822A9179200DB3021 /* WebImageByProto.swift */,
+				648138E922A9179200DB3021 /* EFCustomFetcher.swift */,
+			);
+			path = Backup;
+			sourceTree = "<group>";
+		};
+		648138F322A9179200DB3021 /* Backup */ = {
+			isa = PBXGroup;
+			children = (
+				648138E322A9179200DB3021 /* Backup */,
+				648138F422A9179200DB3021 /* ElementProvider.swiftb */,
+				648138F522A9179200DB3021 /* CacherProtocol.swiftb */,
+				648138F622A9179200DB3021 /* ElementCacherDelegate.swiftb */,
+				648138F722A9179200DB3021 /* IndexGenOld.swiftb */,
+				648138F822A9179200DB3021 /* IndexGenerator.swiftb */,
+				648138F922A9179200DB3021 /* ElementCacher.swiftb */,
+				648138FA22A9179200DB3021 /* LocationCacherDelegate.swiftb */,
+				648138FB22A9179200DB3021 /* NextElementCacher.swiftb */,
+				648138FC22A9179200DB3021 /* EFPrecacher.swiftb */,
+				648138FD22A9179200DB3021 /* EFFectherBackup.swiftb */,
+			);
+			path = Backup;
+			sourceTree = "<group>";
+		};
+		648138FE22A9179200DB3021 /* Cacher */ = {
+			isa = PBXGroup;
+			children = (
+				6481390322A9179300DB3021 /* Cacher.swift */,
+				6481390522A9179300DB3021 /* CacherProtocol.swift */,
+				648138FF22A9179200DB3021 /* Other Classes */,
+			);
+			path = Cacher;
+			sourceTree = "<group>";
+		};
+		648138FF22A9179200DB3021 /* Other Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6481390022A9179200DB3021 /* Limes.swift */,
+				6481390122A9179200DB3021 /* CachingOptions.swift */,
+			);
+			path = "Other Classes";
+			sourceTree = "<group>";
+		};
+		6481393C22A917D400DB3021 /* SwiftExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				6481393D22A917D400DB3021 /* Ext+String.swift */,
+				6481394522A917D400DB3021 /* Ext+Foundation.swift */,
+			);
+			name = SwiftExtensions;
+			path = ../../../../../LocalFolder/SwiftExtensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		648138CC22A9178200DB3021 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				648138D622A9178200DB3021 /* KVFetcher.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		648138D022A9178200DB3021 /* KVFetcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 648138D922A9178200DB3021 /* Build configuration list for PBXNativeTarget "KVFetcher" */;
+			buildPhases = (
+				648138CC22A9178200DB3021 /* Headers */,
+				648138CD22A9178200DB3021 /* Sources */,
+				648138CE22A9178200DB3021 /* Frameworks */,
+				648138CF22A9178200DB3021 /* Resources */,
+				6481395322A9186A00DB3021 /* CopyFiles */,
+				6481395522A9187600DB3021 /* CopyFiles */,
+				6481395722A9188E00DB3021 /* ShellScript */,
+				6481395822A918A000DB3021 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KVFetcher;
+			productName = KVFetcher;
+			productReference = 648138D122A9178200DB3021 /* KVFetcher.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		648138C822A9178200DB3021 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Manuel Vrhovac";
+				TargetAttributes = {
+					648138D022A9178200DB3021 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = 648138CB22A9178200DB3021 /* Build configuration list for PBXProject "KVFetcher" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 648138C722A9178200DB3021;
+			productRefGroup = 648138D222A9178200DB3021 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				648138D022A9178200DB3021 /* KVFetcher */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		648138CF22A9178200DB3021 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6481395222A9185B00DB3021 /* .swiftlint.yml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6481395722A9188E00DB3021 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		648138CD22A9178200DB3021 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6481392122A9179300DB3021 /* Limes.swift in Sources */,
+				6481390822A9179300DB3021 /* ActiveFetchingOptions.swift in Sources */,
+				6481391622A9179300DB3021 /* KVFetcher+Extensions.swift in Sources */,
+				6481391522A9179300DB3021 /* KeyValueProtocol.swift in Sources */,
+				6481392422A9179300DB3021 /* CacherProtocol.swift in Sources */,
+				6481391122A9179300DB3021 /* FetcherProtocol+A.swift in Sources */,
+				6481390722A9179300DB3021 /* FetcherPriority.swift in Sources */,
+				6481392222A9179300DB3021 /* CachingOptions.swift in Sources */,
+				6481391022A9179300DB3021 /* FetcherProtocol+C.swift in Sources */,
+				6481391422A9179300DB3021 /* Syncer.swift in Sources */,
+				6481392322A9179300DB3021 /* Cacher.swift in Sources */,
+				6481394F22A917D400DB3021 /* Ext+Foundation.swift in Sources */,
+				6481391222A9179300DB3021 /* FetcherProtocol.swift in Sources */,
+				6481394722A917D400DB3021 /* Ext+String.swift in Sources */,
+				6481390922A9179300DB3021 /* Fetcher.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		648138D722A9178200DB3021 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		648138D822A9178200DB3021 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		648138DA22A9178200DB3021 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = CTG4693F3N;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = KVFetcher/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.manvrh.KVFetcher;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		648138DB22A9178200DB3021 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = CTG4693F3N;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = KVFetcher/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.manvrh.KVFetcher;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		648138CB22A9178200DB3021 /* Build configuration list for PBXProject "KVFetcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				648138D722A9178200DB3021 /* Debug */,
+				648138D822A9178200DB3021 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		648138D922A9178200DB3021 /* Build configuration list for PBXNativeTarget "KVFetcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				648138DA22A9178200DB3021 /* Debug */,
+				648138DB22A9178200DB3021 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 648138C822A9178200DB3021 /* Project object */;
+}

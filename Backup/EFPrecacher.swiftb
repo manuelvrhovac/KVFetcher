@@ -1,0 +1,78 @@
+//
+//  EFPrefetcher.swift
+//  Wideshow4
+//
+//  Created by Manuel Vrhovac on 03/04/2019.
+//  Copyright © 2019 Manuel Vrhovac. All rights reserved.
+//
+
+import Foundation
+
+/*
+extension KVFetcher {
+    public typealias Prefetcher = EFPrecacher<E>
+}
+    //typealias Prefetcher = EFPrefetcher<E>
+    
+    
+/**
+ Used to supply (provide) KVFetcher with current list of available assets and also the current index that is beeing used, looked at, needed etc. Example if previewing an album, supply all the PHAssets and also the index of asset that is currently on the screen (but maybe not loaded fully).
+ */
+open class EFPrecacher<E> {
+    public struct Closures {
+        public typealias ElementClosure = () -> [Key]
+        public typealias CurrentIndexClosure = () -> Int
+        let keys: () -> [Key]
+        let currentIndex: () -> Int
+        
+        public static var empty: Closures {
+            return Closures(keys: { return [] }, currentIndex: { return 0 })
+        }
+        public init(keys: @escaping ElementClosure, currentIndex: @escaping CurrentIndexClosure) {
+            self.keys = keys
+            self.currentIndex = currentIndex
+        }
+    }
+    
+    public struct Options {
+        public enum Direction {
+            case upcoming
+            case past
+            case mixed
+        }
+        let range: Int
+        let offset: Int
+        let direction: Direction
+        let prioritizeCurrent: Bool
+        let approximateSizeByAverage: Bool
+    }
+    
+    let closures: Closures!
+    let options: Options!
+    
+    /// Shortcut init method
+    public init(keys: @escaping Closures.ElementClosure, currentIndex: @escaping Closures.CurrentIndexClosure, options: Options) {
+        self.closures = Closures(keys: keys, currentIndex: currentIndex)
+        self.options = options
+    }
+}
+    
+
+extension EFPrecacher.Options {
+    public init(range: Int, offset: Int, direction: Direction) {
+        self.init(range: range, offset: offset, direction: direction, prioritizeCurrent: true, approximateSizeByAverage: true)
+    }
+    
+    public static func upcoming(_ range: Int, offset: Int = 0) -> EFPrecacher.Options {
+        return .init(range: range, offset: offset, direction: .upcoming)
+    }
+    
+    public static func past(_ range: Int, offset: Int = 0) -> EFPrecacher.Options {
+        return .init(range: range, offset: offset, direction: .past)
+    }
+    
+    public static func mixed(_ range: Int, offset: Int = 0) -> EFPrecacher.Options {
+        return .init(range: range, offset: offset, direction: .mixed)
+    }
+}
+*/

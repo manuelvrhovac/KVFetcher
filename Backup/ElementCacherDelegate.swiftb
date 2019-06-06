@@ -1,0 +1,33 @@
+//
+//  CacherMethodsProtocol.swift
+//  Wideshow4
+//
+//  Created by Manuel Vrhovac on 08/10/2018.
+//  Copyright © 2018 Manuel Vrhovac. All rights reserved.
+//
+
+import Foundation
+/*
+
+protocol ElementCacherDelegate {
+    
+    associatedtype Element: Hashable
+    associatedtype Result: Any
+    
+    var cacher: ElementCacher<Self> { get }
+    
+    typealias Completion = (Result, Quality) -> Void
+    
+    func approximateSizeCalculator(of key: Keylement, for cacher: ElementCacher<Self>) -> Double
+    
+    func maxSizeOfTransformBlock(for cacher: ElementCacher<Self>) -> Double
+    
+    func maxSizeOfQuickTransformBlock(for cacher: ElementCacher<Self>) -> Double
+    
+    func quickTransform(_ key: Keylement, for cacher: ElementCacher<Self>, completion: @escaping Completion)
+    
+    func transform(_ key: Keylement, for cacher: ElementCacher<Self>, completion: @escaping Completion)
+    
+}
+
+*/
