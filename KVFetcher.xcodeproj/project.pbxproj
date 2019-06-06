@@ -26,6 +26,7 @@
 		6481395222A9185B00DB3021 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6481395122A9185B00DB3021 /* .swiftlint.yml */; };
 		6481395422A9186F00DB3021 /* .swiftlint.yml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6481395122A9185B00DB3021 /* .swiftlint.yml */; };
 		6481395622A9187B00DB3021 /* .swiftlint.yml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6481395122A9185B00DB3021 /* .swiftlint.yml */; };
+		6494137C22A9399A00C55FA1 /* _.gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6494137B22A9399A00C55FA1 /* _.gitignore */; };
 		64CF3AE922A91B4B00871ACE /* KVFetcher.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 648138D122A9178200DB3021 /* KVFetcher.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		6481393D22A917D400DB3021 /* Ext+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ext+String.swift"; sourceTree = "<group>"; };
 		6481394522A917D400DB3021 /* Ext+Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ext+Foundation.swift"; sourceTree = "<group>"; };
 		6481395122A9185B00DB3021 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		6494137B22A9399A00C55FA1 /* _.gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = _.gitignore; sourceTree = "<group>"; };
 		64CF3AEA22A91BD500871ACE /* KVFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KVFetcher.framework; sourceTree = "<group>"; };
 		64CF3B4322A9367200871ACE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 		648138C722A9178200DB3021 = {
 			isa = PBXGroup;
 			children = (
+				6494137B22A9399A00C55FA1 /* _.gitignore */,
 				64CF3B4322A9367200871ACE /* README.md */,
 				64CF3AEA22A91BD500871ACE /* KVFetcher.framework */,
 				6481395122A9185B00DB3021 /* .swiftlint.yml */,
@@ -301,6 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6494137C22A9399A00C55FA1 /* _.gitignore in Resources */,
 				6481395222A9185B00DB3021 /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
