@@ -69,28 +69,12 @@
 		648138DF22A9179200DB3021 /* FetcherPriority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetcherPriority.swift; sourceTree = "<group>"; };
 		648138E022A9179200DB3021 /* ActiveFetchingOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveFetchingOptions.swift; sourceTree = "<group>"; };
 		648138E222A9179200DB3021 /* Fetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fetcher.swift; sourceTree = "<group>"; };
-		648138E422A9179200DB3021 /* GeocodingFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeocodingFetcher.swift; sourceTree = "<group>"; };
-		648138E522A9179200DB3021 /* EFBlockFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFBlockFetcher.swift; sourceTree = "<group>"; };
-		648138E622A9179200DB3021 /* +++EFGenericFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "+++EFGenericFetcher.swift"; sourceTree = "<group>"; };
-		648138E722A9179200DB3021 /* EFWebImageFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFWebImageFetcher.swift; sourceTree = "<group>"; };
-		648138E822A9179200DB3021 /* WebImageByProto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebImageByProto.swift; sourceTree = "<group>"; };
-		648138E922A9179200DB3021 /* EFCustomFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFCustomFetcher.swift; sourceTree = "<group>"; };
 		648138EB22A9179200DB3021 /* FetcherProtocol+C.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FetcherProtocol+C.swift"; sourceTree = "<group>"; };
 		648138EC22A9179200DB3021 /* FetcherProtocol+A.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FetcherProtocol+A.swift"; sourceTree = "<group>"; };
 		648138ED22A9179200DB3021 /* FetcherProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetcherProtocol.swift; sourceTree = "<group>"; };
 		648138F022A9179200DB3021 /* Syncer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syncer.swift; sourceTree = "<group>"; };
 		648138F122A9179200DB3021 /* KeyValueProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValueProtocol.swift; sourceTree = "<group>"; };
 		648138F222A9179200DB3021 /* KVFetcher+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVFetcher+Extensions.swift"; sourceTree = "<group>"; };
-		648138F422A9179200DB3021 /* ElementProvider.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ElementProvider.swiftb; sourceTree = "<group>"; };
-		648138F522A9179200DB3021 /* CacherProtocol.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CacherProtocol.swiftb; sourceTree = "<group>"; };
-		648138F622A9179200DB3021 /* ElementCacherDelegate.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ElementCacherDelegate.swiftb; sourceTree = "<group>"; };
-		648138F722A9179200DB3021 /* IndexGenOld.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IndexGenOld.swiftb; sourceTree = "<group>"; };
-		648138F822A9179200DB3021 /* IndexGenerator.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IndexGenerator.swiftb; sourceTree = "<group>"; };
-		648138F922A9179200DB3021 /* ElementCacher.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ElementCacher.swiftb; sourceTree = "<group>"; };
-		648138FA22A9179200DB3021 /* LocationCacherDelegate.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LocationCacherDelegate.swiftb; sourceTree = "<group>"; };
-		648138FB22A9179200DB3021 /* NextElementCacher.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NextElementCacher.swiftb; sourceTree = "<group>"; };
-		648138FC22A9179200DB3021 /* EFPrecacher.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EFPrecacher.swiftb; sourceTree = "<group>"; };
-		648138FD22A9179200DB3021 /* EFFectherBackup.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EFFectherBackup.swiftb; sourceTree = "<group>"; };
 		6481390022A9179200DB3021 /* Limes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Limes.swift; sourceTree = "<group>"; };
 		6481390122A9179200DB3021 /* CachingOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachingOptions.swift; sourceTree = "<group>"; };
 		6481390322A9179300DB3021 /* Cacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cacher.swift; sourceTree = "<group>"; };
@@ -98,6 +82,22 @@
 		6481393D22A917D400DB3021 /* Ext+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ext+String.swift"; sourceTree = "<group>"; };
 		6481394522A917D400DB3021 /* Ext+Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ext+Foundation.swift"; sourceTree = "<group>"; };
 		6481395122A9185B00DB3021 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		6494137E22A93C1500C55FA1 /* ElementProvider.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ElementProvider.swiftb; sourceTree = "<group>"; };
+		6494137F22A93C1500C55FA1 /* CacherProtocol.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CacherProtocol.swiftb; sourceTree = "<group>"; };
+		6494138022A93C1500C55FA1 /* ElementCacherDelegate.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ElementCacherDelegate.swiftb; sourceTree = "<group>"; };
+		6494138122A93C1500C55FA1 /* IndexGenOld.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IndexGenOld.swiftb; sourceTree = "<group>"; };
+		6494138222A93C1500C55FA1 /* IndexGenerator.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IndexGenerator.swiftb; sourceTree = "<group>"; };
+		6494138322A93C1500C55FA1 /* ElementCacher.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ElementCacher.swiftb; sourceTree = "<group>"; };
+		6494138422A93C1500C55FA1 /* LocationCacherDelegate.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LocationCacherDelegate.swiftb; sourceTree = "<group>"; };
+		6494138522A93C1500C55FA1 /* NextElementCacher.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NextElementCacher.swiftb; sourceTree = "<group>"; };
+		6494138622A93C1500C55FA1 /* EFPrecacher.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EFPrecacher.swiftb; sourceTree = "<group>"; };
+		6494138822A93C1500C55FA1 /* GeocodingFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeocodingFetcher.swift; sourceTree = "<group>"; };
+		6494138922A93C1500C55FA1 /* EFBlockFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFBlockFetcher.swift; sourceTree = "<group>"; };
+		6494138A22A93C1500C55FA1 /* +++EFGenericFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "+++EFGenericFetcher.swift"; sourceTree = "<group>"; };
+		6494138B22A93C1500C55FA1 /* EFWebImageFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFWebImageFetcher.swift; sourceTree = "<group>"; };
+		6494138C22A93C1500C55FA1 /* WebImageByProto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebImageByProto.swift; sourceTree = "<group>"; };
+		6494138D22A93C1500C55FA1 /* EFCustomFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFCustomFetcher.swift; sourceTree = "<group>"; };
+		6494138E22A93C1500C55FA1 /* EFFectherBackup.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EFFectherBackup.swiftb; sourceTree = "<group>"; };
 		64CF3AEA22A91BD500871ACE /* KVFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KVFetcher.framework; sourceTree = "<group>"; };
 		64CF3B4322A9367200871ACE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,7 +121,7 @@
 				6481395122A9185B00DB3021 /* .swiftlint.yml */,
 				6481393C22A917D400DB3021 /* SwiftExtensions */,
 				648138D322A9178200DB3021 /* KVFetcher */,
-				648138F322A9179200DB3021 /* Backup */,
+				6494137D22A93C1500C55FA1 /* Backup */,
 				648138D222A9178200DB3021 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -169,37 +169,6 @@
 			path = "Other Classes";
 			sourceTree = "<group>";
 		};
-		648138E322A9179200DB3021 /* Backup */ = {
-			isa = PBXGroup;
-			children = (
-				648138E422A9179200DB3021 /* GeocodingFetcher.swift */,
-				648138E522A9179200DB3021 /* EFBlockFetcher.swift */,
-				648138E622A9179200DB3021 /* +++EFGenericFetcher.swift */,
-				648138E722A9179200DB3021 /* EFWebImageFetcher.swift */,
-				648138E822A9179200DB3021 /* WebImageByProto.swift */,
-				648138E922A9179200DB3021 /* EFCustomFetcher.swift */,
-			);
-			path = Backup;
-			sourceTree = "<group>";
-		};
-		648138F322A9179200DB3021 /* Backup */ = {
-			isa = PBXGroup;
-			children = (
-				648138E322A9179200DB3021 /* Backup */,
-				648138F422A9179200DB3021 /* ElementProvider.swiftb */,
-				648138F522A9179200DB3021 /* CacherProtocol.swiftb */,
-				648138F622A9179200DB3021 /* ElementCacherDelegate.swiftb */,
-				648138F722A9179200DB3021 /* IndexGenOld.swiftb */,
-				648138F822A9179200DB3021 /* IndexGenerator.swiftb */,
-				648138F922A9179200DB3021 /* ElementCacher.swiftb */,
-				648138FA22A9179200DB3021 /* LocationCacherDelegate.swiftb */,
-				648138FB22A9179200DB3021 /* NextElementCacher.swiftb */,
-				648138FC22A9179200DB3021 /* EFPrecacher.swiftb */,
-				648138FD22A9179200DB3021 /* EFFectherBackup.swiftb */,
-			);
-			path = Backup;
-			sourceTree = "<group>";
-		};
 		648138FE22A9179200DB3021 /* Cacher */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +196,37 @@
 			);
 			name = SwiftExtensions;
 			path = ../../../../../LocalFolder/SwiftExtensions;
+			sourceTree = "<group>";
+		};
+		6494137D22A93C1500C55FA1 /* Backup */ = {
+			isa = PBXGroup;
+			children = (
+				6494137E22A93C1500C55FA1 /* ElementProvider.swiftb */,
+				6494137F22A93C1500C55FA1 /* CacherProtocol.swiftb */,
+				6494138022A93C1500C55FA1 /* ElementCacherDelegate.swiftb */,
+				6494138122A93C1500C55FA1 /* IndexGenOld.swiftb */,
+				6494138222A93C1500C55FA1 /* IndexGenerator.swiftb */,
+				6494138322A93C1500C55FA1 /* ElementCacher.swiftb */,
+				6494138422A93C1500C55FA1 /* LocationCacherDelegate.swiftb */,
+				6494138522A93C1500C55FA1 /* NextElementCacher.swiftb */,
+				6494138622A93C1500C55FA1 /* EFPrecacher.swiftb */,
+				6494138722A93C1500C55FA1 /* Backup */,
+				6494138E22A93C1500C55FA1 /* EFFectherBackup.swiftb */,
+			);
+			path = Backup;
+			sourceTree = "<group>";
+		};
+		6494138722A93C1500C55FA1 /* Backup */ = {
+			isa = PBXGroup;
+			children = (
+				6494138822A93C1500C55FA1 /* GeocodingFetcher.swift */,
+				6494138922A93C1500C55FA1 /* EFBlockFetcher.swift */,
+				6494138A22A93C1500C55FA1 /* +++EFGenericFetcher.swift */,
+				6494138B22A93C1500C55FA1 /* EFWebImageFetcher.swift */,
+				6494138C22A93C1500C55FA1 /* WebImageByProto.swift */,
+				6494138D22A93C1500C55FA1 /* EFCustomFetcher.swift */,
+			);
+			path = Backup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
