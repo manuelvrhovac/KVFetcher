@@ -1,10 +1,4 @@
 //
-//  ElementCacher.swift
-//  Wideshow4
-//
-//  Created by Manuel Vrhovac on 10/10/2018.
-//  Copyright © 2018 Manuel Vrhovac. All rights reserved.
-//
 
 import Foundation
 

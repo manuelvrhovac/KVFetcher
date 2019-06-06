@@ -1,10 +1,4 @@
 //
-//  KVFetcherProtocol.swift
-//  KVFetcherFramework
-//
-//  Created by Manuel Vrhovac on 26/04/2019.
-//  Copyright © 2019 Manuel Vrhovac. All rights reserved.
-//
 
 import Foundation
 
@@ -18,7 +12,7 @@ public protocol KVFetcher_Protocol: class, KeyValueProtocol {
 	var timeout: TimeInterval? { get set }
 	
 	/// Override this method while subclassing and define how the Value is fetched from a Key.
-	func _executeFetchValue(for key: Key, completion: ValueCompletion?)
+	func _executeFetchValue(for key: Key, completion: ValueCompletion!)
 }
 
 extension KVFetcher_Protocol {
@@ -31,7 +25,7 @@ extension KVFetcher_Protocol {
 	}
 	
 	/// KVFetcher.Protocol: Fetches and saves to cache
-	func _executeTimeoutFetchValue(for key: Key, completion: ValueCompletion?) {
+	func _executeTimeoutFetchValue(for key: Key, completion: ValueCompletion!) {
 		guard let timeout = timeout else {
 			return self._executeFetchValue(for: key, completion: completion)
 		}
@@ -71,7 +65,7 @@ extension KVFetcher_Protocol {
 	public func fetchValue(
 		for key: Key,
 		priority: Priority = .now,
-		completion: ValueCompletion?) {
+		completion: ValueCompletion!) {
 		addToQueueOrExecute(priority: priority
 		) {
 			self._executeTimeoutFetchValue(for: key) { value in

@@ -1,10 +1,4 @@
 //
-//  KVFetcherCachedProtocol.swift
-//  KVFetcherFramework
-//
-//  Created by Manuel Vrhovac on 26/04/2019.
-//  Copyright © 2019 Manuel Vrhovac. All rights reserved.
-//
 
 import Foundation
 
@@ -26,7 +20,7 @@ extension KVFetcher_Caching_Protocol where Cacher.Key == Key, Cacher.Value == Va
 		for key: Key,
 		priority: Priority = .now,
 		cachingOptions: CachingOptions = [],
-		completion: ValueCompletion?
+		completion: ValueCompletion!
 		) {
 		let ignoreCached = cachingOptions.contains(.ignoreCached)
 		if !ignoreCached, let existing = cacher.cachedResult(for: key) {

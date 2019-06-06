@@ -1,10 +1,3 @@
-//
-//  ObjectCache.swift
-//  Wideshow4
-//
-//  Created by Manuel Vrhovac on 09/10/2018.
-//  Copyright © 2018 Manuel Vrhovac. All rights reserved.
-//
 
 import Foundation
 
@@ -17,9 +10,13 @@ To subclass start with defining the **Key** and **Value** typealiases. Continue 
 open class KVFetcher<Key: Hashable, Value>: KVFetcher_Protocol {
 	public var _queuedClosures: [() -> Void] = []
 	public var timeout: TimeInterval?
-	open func _executeFetchValue(for key: Key, completion: ValueCompletion?) {
+	open func _executeFetchValue(for key: Key, completion: ValueCompletion!) {
 		fatalError("KVFetcher needs to be subclassed!")
 	}
+    
+    public init() {
+        
+    }
 }
 
 

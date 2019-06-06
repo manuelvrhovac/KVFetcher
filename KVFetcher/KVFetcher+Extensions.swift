@@ -1,10 +1,5 @@
 //
-//  KV+Extensions.swift
-//  KVFetcherFramework
-//
-//  Created by Manuel Vrhovac on 05/04/2019.
-//  Copyright © 2019 Manuel Vrhovac. All rights reserved.
-//
+
 
 import Foundation
 import Photos
