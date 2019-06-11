@@ -250,5 +250,3 @@ If you prefer not to use either of the aforementioned dependency managers, you c
 
 KVFetcher is released under the MIT license. See LICENSE for details.
 
-
-
