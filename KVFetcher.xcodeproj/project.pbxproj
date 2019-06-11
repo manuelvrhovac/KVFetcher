@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		645B89DE22AEA26C009A9DD4 /* Ext+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645B89DD22AEA26C009A9DD4 /* Ext+String.swift */; };
+		645B89DF22AEA26C009A9DD4 /* Ext+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645B89DC22AEA26C009A9DD4 /* Ext+Foundation.swift */; };
 		648138D622A9178200DB3021 /* KVFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 648138D422A9178200DB3021 /* KVFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6481390722A9179300DB3021 /* FetcherPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648138DF22A9179200DB3021 /* FetcherPriority.swift */; };
 		6481390822A9179300DB3021 /* ActiveFetchingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648138E022A9179200DB3021 /* ActiveFetchingOptions.swift */; };
@@ -17,16 +19,15 @@
 		6481391422A9179300DB3021 /* Syncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648138F022A9179200DB3021 /* Syncer.swift */; };
 		6481391522A9179300DB3021 /* KeyValueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648138F122A9179200DB3021 /* KeyValueProtocol.swift */; };
 		6481391622A9179300DB3021 /* KVFetcher+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648138F222A9179200DB3021 /* KVFetcher+Extensions.swift */; };
-		6481392122A9179300DB3021 /* Limes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481390022A9179200DB3021 /* Limes.swift */; };
+		6481392122A9179300DB3021 /* CacherLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481390022A9179200DB3021 /* CacherLimit.swift */; };
 		6481392222A9179300DB3021 /* CachingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481390122A9179200DB3021 /* CachingOptions.swift */; };
 		6481392322A9179300DB3021 /* Cacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481390322A9179300DB3021 /* Cacher.swift */; };
 		6481392422A9179300DB3021 /* CacherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481390522A9179300DB3021 /* CacherProtocol.swift */; };
-		6481394722A917D400DB3021 /* Ext+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481393D22A917D400DB3021 /* Ext+String.swift */; };
-		6481394F22A917D400DB3021 /* Ext+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6481394522A917D400DB3021 /* Ext+Foundation.swift */; };
 		6481395222A9185B00DB3021 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6481395122A9185B00DB3021 /* .swiftlint.yml */; };
 		6481395422A9186F00DB3021 /* .swiftlint.yml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6481395122A9185B00DB3021 /* .swiftlint.yml */; };
 		6481395622A9187B00DB3021 /* .swiftlint.yml in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6481395122A9185B00DB3021 /* .swiftlint.yml */; };
-		64CF3AE922A91B4B00871ACE /* KVFetcher.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 648138D122A9178200DB3021 /* KVFetcher.framework */; };
+		649413AA22A9581800C55FA1 /* KVFetcher.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 648138D122A9178200DB3021 /* KVFetcher.framework */; };
+		649413AC22AE3D2300C55FA1 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 649413AB22AE3D2300C55FA1 /* LICENSE.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,13 +57,15 @@
 			dstPath = "/Users/Manuel 1/Documents/Development 2019/KVFetcher";
 			dstSubfolderSpec = 0;
 			files = (
-				64CF3AE922A91B4B00871ACE /* KVFetcher.framework in CopyFiles */,
+				649413AA22A9581800C55FA1 /* KVFetcher.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		645B89DC22AEA26C009A9DD4 /* Ext+Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Foundation.swift"; sourceTree = "<group>"; };
+		645B89DD22AEA26C009A9DD4 /* Ext+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+String.swift"; sourceTree = "<group>"; };
 		648138D122A9178200DB3021 /* KVFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KVFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		648138D422A9178200DB3021 /* KVFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVFetcher.h; sourceTree = "<group>"; };
 		648138D522A9178200DB3021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,7 +78,7 @@
 		648138F022A9179200DB3021 /* Syncer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syncer.swift; sourceTree = "<group>"; };
 		648138F122A9179200DB3021 /* KeyValueProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValueProtocol.swift; sourceTree = "<group>"; };
 		648138F222A9179200DB3021 /* KVFetcher+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KVFetcher+Extensions.swift"; sourceTree = "<group>"; };
-		6481390022A9179200DB3021 /* Limes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Limes.swift; sourceTree = "<group>"; };
+		6481390022A9179200DB3021 /* CacherLimit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacherLimit.swift; sourceTree = "<group>"; };
 		6481390122A9179200DB3021 /* CachingOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachingOptions.swift; sourceTree = "<group>"; };
 		6481390322A9179300DB3021 /* Cacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cacher.swift; sourceTree = "<group>"; };
 		6481390522A9179300DB3021 /* CacherProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacherProtocol.swift; sourceTree = "<group>"; };
@@ -98,6 +101,7 @@
 		6494138C22A93C1500C55FA1 /* WebImageByProto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebImageByProto.swift; sourceTree = "<group>"; };
 		6494138D22A93C1500C55FA1 /* EFCustomFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFCustomFetcher.swift; sourceTree = "<group>"; };
 		6494138E22A93C1500C55FA1 /* EFFectherBackup.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EFFectherBackup.swiftb; sourceTree = "<group>"; };
+		649413AB22AE3D2300C55FA1 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		64CF3AEA22A91BD500871ACE /* KVFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KVFetcher.framework; sourceTree = "<group>"; };
 		64CF3B4322A9367200871ACE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +120,7 @@
 		648138C722A9178200DB3021 = {
 			isa = PBXGroup;
 			children = (
+				649413AB22AE3D2300C55FA1 /* LICENSE.md */,
 				64CF3B4322A9367200871ACE /* README.md */,
 				64CF3AEA22A91BD500871ACE /* KVFetcher.framework */,
 				6481395122A9185B00DB3021 /* .swiftlint.yml */,
@@ -137,6 +142,8 @@
 		648138D322A9178200DB3021 /* KVFetcher */ = {
 			isa = PBXGroup;
 			children = (
+				645B89DD22AEA26C009A9DD4 /* Ext+String.swift */,
+				645B89DC22AEA26C009A9DD4 /* Ext+Foundation.swift */,
 				648138DD22A9179200DB3021 /* Fetcher */,
 				648138FE22A9179200DB3021 /* Cacher */,
 				648138F022A9179200DB3021 /* Syncer.swift */,
@@ -182,7 +189,7 @@
 		648138FF22A9179200DB3021 /* Other Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6481390022A9179200DB3021 /* Limes.swift */,
+				6481390022A9179200DB3021 /* CacherLimit.swift */,
 				6481390122A9179200DB3021 /* CachingOptions.swift */,
 			);
 			path = "Other Classes";
@@ -301,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				649413AC22AE3D2300C55FA1 /* LICENSE.md in Resources */,
 				6481395222A9185B00DB3021 /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +340,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6481392122A9179300DB3021 /* Limes.swift in Sources */,
+				6481392122A9179300DB3021 /* CacherLimit.swift in Sources */,
+				645B89DF22AEA26C009A9DD4 /* Ext+Foundation.swift in Sources */,
 				6481390822A9179300DB3021 /* ActiveFetchingOptions.swift in Sources */,
 				6481391622A9179300DB3021 /* KVFetcher+Extensions.swift in Sources */,
 				6481391522A9179300DB3021 /* KeyValueProtocol.swift in Sources */,
@@ -343,9 +352,8 @@
 				6481391022A9179300DB3021 /* FetcherProtocol+C.swift in Sources */,
 				6481391422A9179300DB3021 /* Syncer.swift in Sources */,
 				6481392322A9179300DB3021 /* Cacher.swift in Sources */,
-				6481394F22A917D400DB3021 /* Ext+Foundation.swift in Sources */,
 				6481391222A9179300DB3021 /* FetcherProtocol.swift in Sources */,
-				6481394722A917D400DB3021 /* Ext+String.swift in Sources */,
+				645B89DE22AEA26C009A9DD4 /* Ext+String.swift in Sources */,
 				6481390922A9179300DB3021 /* Fetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

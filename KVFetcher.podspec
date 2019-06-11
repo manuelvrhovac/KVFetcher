@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "KVFetcher"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A cached async key/value fetcher"
 
   # This description is used to generate tags and improve search results.
@@ -90,8 +90,8 @@ Use `KVFetcher` and its subclasses to easily fetch, cache and even pre-fetch thi
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "KVFetcher"
-  s.exclude_files = "Backup", "KVFetcher.framework"
+  s.source_files  = "KVFetcher/**/*.{h,m,swift}"
+  s.exclude_files = "Backup", "KVFetcher.framework", "KVFetcher/**/*.{framework, xcodeproj}", "KVFetcher/KVFetcher.framework"
 
   # s.public_header_files = "Classes/**/*.h"
 
