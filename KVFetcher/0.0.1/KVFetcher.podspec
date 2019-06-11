@@ -90,7 +90,7 @@ Use `KVFetcher` and its subclasses to easily fetch, cache and even pre-fetch thi
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "KVFetcher/*.{h,m,swift}"
+  s.source_files  = "KVFetcher/**/*.{h,m,swift}"
   s.exclude_files = "Backup", "KVFetcher.framework"
 
   # s.public_header_files = "Classes/**/*.h"
