@@ -29,20 +29,20 @@ public struct KVActiveFetchingOptions {
 	/// Direction of prefetching (almost always .upcoming)
 	public let direction: Direction
 	
-	/// Should current key be fetched before all others?
-	public let prioritizeCurrent: Bool
+	/// Should current key and next key to be fetched before all others?
+	public let prioritizeCurrentAndNext: Bool
 	
-    /// INTERNAL value used for indication that active fetcher is busy (prefetching)
+    /// ⚠️INTERNAL⚠️ - value used for indication that active fetcher is busy (prefetching)
 	var _isPrefetching: Bool = false
     
-    /// INTERNAL timer that schedules prefetches
+    /// ⚠️INTERNAL⚠️ - timer that schedules prefetches
 	var _prefetchTimer: Timer!
 	
-	public init(range: Int, offset: Int, direction: Direction, prioritizeCurrent: Bool) {
+	public init(range: Int, offset: Int, direction: Direction, prioritizeCurrentAndNext: Bool) {
 		self.range = range
 		self.offset = offset
 		self.direction = direction
-		self.prioritizeCurrent = prioritizeCurrent
+		self.prioritizeCurrentAndNext = prioritizeCurrentAndNext
 	}
 	
 	
@@ -55,7 +55,7 @@ public extension KVActiveFetchingOptions {
 	}
 	
 	init(range: Int, offset: Int, direction: Direction) {
-		self.init(range: range, offset: offset, direction: direction, prioritizeCurrent: true)
+		self.init(range: range, offset: offset, direction: direction, prioritizeCurrentAndNext: true)
 	}
 	
 	/// Fetch upcoming keys (current+1, current+2...) in background. PrioritizeCurrent = true.

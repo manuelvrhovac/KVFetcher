@@ -19,29 +19,36 @@ open class KVCacher<Key: Hashable, Value>: KVCacher_Protocol {
 	
 	// - MARK: Properties
 	
+    /// ⚠️INTERNAL⚠️ - Results that are cached already are stored here.
 	public var _cacheDict: [Key: DatedValue] = [:]
+    
+    /// ⚠️INTERNAL⚠️ - If memory limit is used, sizes of values (cached or not) are stored here.
 	public var _valueSizeCacheDict: [Key: Double] = [:]
+    
+    /// Maximum allowed age of cached value before it's removed.
 	public var maxAge: Double?
-	public var limes: Limes?
-	
+    
+    /// Limit defines how storage is limited (by count or by memory size).
+	public var limit: Limit?
+    
 	// MARK: - Init
 	
 	/// Initializes a cacher without storage limit.
 	public init() {
-		self.limes = .none
+		self.limit = .none
 	}
 	
-	public init(limes: Limes?) {
-		self.limes = limes
+	public init(limit: Limit?) {
+		self.limit = limit
 	}
 	
 	/// Initializes a cacher without storage limit.
 	open class var unlimited: KVCacher {
-		return .init(limes: .none)
+		return .init(limit: .none)
 	}
 	
 	/// Initializes a cacher with a maximum of 0 items (no storage).
 	open class var restricted: KVCacher {
-		return .init(limes: .count(max: 0))
+		return .init(limit: .count(max: 0))
 	}
 }

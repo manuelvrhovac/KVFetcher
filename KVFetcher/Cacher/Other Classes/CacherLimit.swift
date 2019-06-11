@@ -6,16 +6,16 @@ import Foundation
 extension KVCacher {
 	
 	/// Defines how Cacher's storage is limited. It could be by counting the saved values or approximating their memory footprint (by examining key or the value itself).
-	public class Limes {
-		
-		internal class Count: KVCacher.Limes {
+	public class Limit {
+        
+		internal class Count: KVCacher.Limit {
 			public var max: Int
 			init(max: Int) {
 				self.max = max
 			}
 		}
 		
-		internal class Memory: KVCacher.Limes {
+		internal class Memory: KVCacher.Limit {
 			public var sizeCache: [Key: Double] = [:]
 			public var max: Double = 0.0
 			public var keyTransform: ((Key) -> Double)?
@@ -64,30 +64,30 @@ extension KVCacher {
 }
 
 // Public initializers for use:
-public extension KVCacher.Limes {
+public extension KVCacher.Limit {
 	
 	/// Unlimited storage.
-	static var none: KVCacher.Limes {
+	static var none: KVCacher.Limit {
 		return .init()
 	}
 	
 	/// Limits storage to 0 items.
-	static var restricted: KVCacher.Limes {
+	static var restricted: KVCacher.Limit {
 		return Count(max: 0)
 	}
 	
 	/// Limits storage by number saved values.
-	static func count(max: Int) -> KVCacher.Limes {
+	static func count(max: Int) -> KVCacher.Limit {
 		return Count(max: max)
 	}
 	
 	/// Limits storage by approximating the size of value's key - by examining the key inside the 'keyTransform' closure to return its memory footprint (normally in MBs)
-	static func memory(max: Double, keyTransform: @escaping (Key) -> Double) -> KVCacher.Limes {
+	static func memory(max: Double, keyTransform: @escaping (Key) -> Double) -> KVCacher.Limit {
 		return Memory(max: max, keyTransform: keyTransform)
 	}
 	
 	/// Limits storage by approximating the size of saved value - by examining the value itself inside the 'valueTransform' closure to return its memory footprint (normally in MBs)
-	static func memory(max: Double, valueTransform: @escaping (Value) -> Double) -> KVCacher.Limes {
+	static func memory(max: Double, valueTransform: @escaping (Value) -> Double) -> KVCacher.Limit {
 		return Memory(max: max, valueTransform: valueTransform)
 	}
 }

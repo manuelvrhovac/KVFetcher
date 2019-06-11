@@ -12,6 +12,6 @@ public protocol KeyValueProtocol where Key: Hashable {
 
 extension KeyValueProtocol {
 	
-	public typealias ValueCompletion = (Value?) -> Void
-	public typealias ValueArrayCompletion = ([Value?]) -> Void
+	public typealias ValueCompletion = (Value) -> Void
+	public typealias ValueArrayCompletion = ([Value]) -> Void
 }

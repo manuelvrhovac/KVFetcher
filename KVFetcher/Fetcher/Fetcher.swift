@@ -1,4 +1,3 @@
-
 import Foundation
 
 /**
@@ -8,8 +7,14 @@ To subclass start with defining the **Key** and **Value** typealiases. Continue 
 */
 
 open class KVFetcher<Key: Hashable, Value>: KVFetcher_Protocol {
+    
+    /// ⚠️INTERNAL⚠️ - A list of closures that are to be executed. Normally you shouldn't override or use this at all.
 	public var _queuedClosures: [() -> Void] = []
+    
+    /// Set this to a TimeInterval (Double) time amount in order to return nil from the '_executeFetchValue(for:completion:)' function after this time.
 	public var timeout: TimeInterval?
+    
+    /// ⚠️INTERNAL⚠️ - Executes the fetch and returns value. Override this method in your KVFetcher subclass but avoid using it directly as it doesn't use queueing or caching.
 	open func _executeFetchValue(for key: Key, completion: ValueCompletion!) {
 		fatalError("KVFetcher needs to be subclassed!")
 	}
@@ -45,13 +50,13 @@ extension KVFetcher.Caching {
 	To subclass, add the necessary protocol stubs. Then add a new init method that initializes newly added properties.
 	*/
 	open class Active: Caching, KVFetcher_Caching_Active_Protocol {
-		public var keys: () -> [Key]
-		public var currentIndex: () -> Int
+		public var keys: [Key]
+		public var currentIndex: Int
 		public var options: Options
 		
 		public init(
-			keys: @escaping () -> [Key],
-			currentIndex: @escaping () -> Int,
+			keys: [Key],
+			currentIndex: Int,
 			options: Options,
 			cacher: Cacher
 			) {

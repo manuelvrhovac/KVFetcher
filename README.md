@@ -9,7 +9,7 @@ Create a subclass of `KVFetcher<Key, Value>.Caching` to easily fetch and cache t
 > Example: Image (Value) fetched from internet for specific URLs (Key), can be cached so next time you try to fetch them, their cached versions will be returned instead.
 
 ### Cacher
-Cacher is a subclass of KVCacher. It stores fetched values into a dictionary, keeping track of when a value (for a key) has been added. Its storage can be limited by item count or by memory footprint (and a formula that approximates it). Cacher will automatically remove older entries to make room for new ones. A maximum age can also be set.
+Cacher is a subclass of KVCacher. It stores fetched values into a dictionary, keeping track of when a value (for a key) has been added. Its storage can be limited so Cacher may automatically remove older entries to make room for new ones. A maximum age of a cached value can also be set.
 
 
 ### Cacher.Limit
@@ -20,6 +20,8 @@ Defines the limit of cacher's storage. It could be simply by counting or by exam
 
 # Simple example: _FlagFetcher_
 FlagFetcher fetches a flag image of some country using its ISO string. For example, using "de" as key will fetch german flag image as value and automatically cache it for future use. 
+
+![](https://github.com/manuelvrhovac/resources/blob/master/Screenshot%202019-06-10%20at%2002.03.10.png?raw=true)
 
 FlagFetcher is a subclass of `KVFetcher.Cached` class with String as Key and UIImage? as Value. Only the   `_executeFetchValue(for:completion:)` method had to be overridden:
 
@@ -78,10 +80,10 @@ Same as above you can also fetch synchronously by using square brackets:
 ```swift
 let germanFlag = flagFetcher["de"]!
 print("Got flag image with size: \(germanFlag.size)")
-
+```
 ### Fetch multiple values
 Use `.fetchMultiple(keys:completion:)` method to fetch more than one value. Completion closure (handler) is called after all values have been fetched.
-```
+
 ### Retrieving values from cache and caching them manually
 
 `.cacher.cachedValue(for: Key) -> Value?` 
@@ -113,11 +115,15 @@ flagFetcher.cacher.cache(germanFlag, for: "de")
 ### `KVFetcher<Key, Value>.Caching.Active`
 
 Subclass it to create a fetcher that has the possibility of pre-fetching values in background so they will be ready when requested later.
+
+
 `
 ## Active (prefetching) FlagFetcher
-Imagine the user viewing a web gallery of european flags - we could pre-fetch the upcoming 5 flags relative to the one currently displayed on the screen.
+Imagine the user viewing a web gallery of world flags. We could, for example, pre-fetch a range of flags starting from flag before, up until 5 flags total. So if user opened flag 31; flags 30, 32, 33, and 34 would be precached in background while they were occupied with flag 31.
 
-No need to subclass anything, we can just use the  .Active subclass on our existing `FlagFetcher` class! We just need to initialize it inside viewDidLoad():
+![alt](https://github.com/manuelvrhovac/resources/blob/master/Screenshot%202019-06-10%20at%2001.44.22.png?raw=true)
+
+How to implement this? No need to subclass anything, we can just use the  .Active subclass on our existing `FlagFetcher` class! We can initialize it inside viewDidLoad() with the following parameters:
 - `keys:` list of all flag codes
 - `currentIndex:` initial currently viewed flag index
 - `options:` (range, offset and direction of pre-fetch)
@@ -128,7 +134,7 @@ No need to subclass anything, we can just use the  .Active subclass on our exist
 class FlagViewer: UIViewController {
     
     var activeFlagFetcher: FlagFetcher.Active!
-    var flagList = ["AT", "BE", "BG", "CY", "CZ", "DK", "EE", "FI", "FR", "DE"]
+    var flagList = [..., "FI", "AT", "BE", "HR", "FR", "DE", "GR", "EE", "FR"...]
     
     override func viewDidLoad() {
         activeFlagFetcher = .init(keys: flagList,
@@ -142,6 +148,7 @@ class FlagViewer: UIViewController {
     
     @IBAction func userSwiped() {
         activeFlagFetcher.currentIndex += 1
+        displayNextFlag()
         //...
     }
     

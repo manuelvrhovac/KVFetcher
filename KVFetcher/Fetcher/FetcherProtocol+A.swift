@@ -6,10 +6,10 @@ public protocol KVFetcher_Caching_Active_Protocol: KVFetcher_Caching_Protocol {
 	typealias Options = KVActiveFetchingOptions
 	
 	/// A closure that returns keys to be fetched potentially (around or prioritized...).
-	var keys: () -> [Key] { get set }
+	var keys: [Key] { get set }
 	
 	/// A closure that returns the current index when requested.
-	var currentIndex: () -> Int { get set }
+	var currentIndex: Int { get set }
 	
 	/// Set of options that define how the active fetching will happen.
 	var options: Options { get set }
@@ -36,10 +36,10 @@ extension KVFetcher_Caching_Active_Protocol where Cacher.Key == Key, Cacher.Valu
 		options._prefetchTimer = nil
 	}
 	
-	/// All the keys that are listed in 'keys()' but not present in cacher's cachedElements.
+	/// All the keys that are listed in 'keys()' but not present in cacher's cachedKeys.
 	func nonCachedElements() -> [Key] {
-		let cachedElements = cacher.cachedElements
-		return keys().filter { !cachedElements.contains($0) }
+		let cachedKeys = cacher.cachedKeys
+		return keys.filter { !cachedKeys.contains($0) }
 	}
 	
 	
@@ -55,14 +55,22 @@ extension KVFetcher_Caching_Active_Protocol where Cacher.Key == Key, Cacher.Valu
 	
 	/// Checks the current index, available keys and prefetcher options to see if there's another key ready to be prefetched.
 	func nextKeyToPrefetch() -> Key? {
-		let currentIndex = self.currentIndex()
-		let keys = self.keys()
 		guard !keys.isEmpty && keys.count > currentIndex else {
 			return nil
 		}
-		if options.prioritizeCurrent && !cacher.has(cachedResultFor: keys[currentIndex]) {
-			return keys[currentIndex]
-		}
+        if options.prioritizeCurrentAndNext {
+            // Check if current is not cached
+            let currentKey = keys[currentIndex]
+            if !cacher.has(cachedValueFor: currentKey) {
+                return currentKey
+            }
+            // Check if next is not cached
+            let nextKey = keys[overflow: currentIndex + 1]!
+            if options.range > 1 && !cacher.has(cachedValueFor: nextKey) {
+                return nextKey
+            }
+        }
+		
 		for timesChecked in 0 ..< self.options.range {
 			let dir: Int = { //
 				switch options.direction {
@@ -74,11 +82,10 @@ extension KVFetcher_Caching_Active_Protocol where Cacher.Key == Key, Cacher.Valu
 					return (timesChecked % 2 != 0 ? 1 : -1) * ((timesChecked + 1) / 2)
 				}
 			}()
-			var nowIndex = currentIndex + options.offset + timesChecked * dir
-			nowIndex = nowIndex.fixOverflow(count: keys.count)
-			let foundElement = keys[nowIndex]
-			if !cacher.has(cachedResultFor: foundElement) {
-				return foundElement
+            let anIndex = currentIndex + options.offset + timesChecked * dir
+            let anElement = keys[overflow: anIndex]!
+			if !cacher.has(cachedValueFor: anElement) {
+				return anElement
 			}
 		}
 		return nil
@@ -93,19 +100,19 @@ extension KVFetcher_Caching_Active_Protocol where Cacher.Key == Key, Cacher.Valu
 	///
 	/// Once approximated, size will be saved into a internal size cache of the cacher.
 	func prefetchIfPossible(_ key: Key) {
-		let canBeFreed = cacher.cachedElements.count >= options.range
-		switch cacher.limes {
-		case let limes as Cacher.Limes.Count:
-			guard cacher.cachedElements.count < limes.max || canBeFreed else {
+		let canBeFreed = cacher.cachedKeys.count >= options.range
+		switch cacher.limit {
+		case let limit as Cacher.Limit.Count:
+			guard cacher.cachedKeys.count < limit.max || canBeFreed else {
 				// No sense to remove keys if it even isn't full.
 				return print("Range not full! Prefetcher return.")
 			}
 			return prefetchValue(key)
-		case let limes as Cacher.Limes.Memory:
-			let usedMemory = limes.approximateSize(of: cacher.cachedElements)
-			if let size = limes.approximateSize(of: key) {
+		case let limit as Cacher.Limit.Memory:
+			let usedMemory = limit.approximateSize(of: cacher.cachedKeys)
+			if let size = limit.approximateSize(of: key) {
 				// size is known:
-				guard (usedMemory + size < limes.max) || canBeFreed else {
+				guard (usedMemory + size < limit.max) || canBeFreed else {
 					return print("prefetchIfPossible: Range not full! Prefetcher return.")
 				}
 				// size fits
@@ -114,7 +121,7 @@ extension KVFetcher_Caching_Active_Protocol where Cacher.Key == Key, Cacher.Valu
 			// size is unkown, fetch and check if fits later
 			return prefetchValue(key, checkResultSize: true)
 		default:
-			// unkown type of Limes or no limes.
+			// unkown type of Limit or no limit.
 			return prefetchValue(key)
 		}
 	}
@@ -125,7 +132,7 @@ extension KVFetcher_Caching_Active_Protocol where Cacher.Key == Key, Cacher.Valu
 	/// In the rare case when the value was fetched and its size approximated afterwards there might be a possibility that it won't be cahced (due to too large size)
 	func prefetchValue(_ key: Key, checkResultSize: Bool = false) {
 		options._isPrefetching = true
-		return _executeTimeoutFetchValue(for: key) { value in
+		return _executeFetchValue(for: key) { value in
 			self.prefetchedValue(value, key: key, checkResultSize: checkResultSize)
 		}
 	}
@@ -133,12 +140,12 @@ extension KVFetcher_Caching_Active_Protocol where Cacher.Key == Key, Cacher.Valu
 	func prefetchedValue(_ value: Value?, key: Key, checkResultSize: Bool) {
 		options._isPrefetching = false
 		guard let value = value else { return }
-		if checkResultSize, let limes = cacher.limes as? Cacher.Limes.Memory {
-			let canBeFreed = cacher.cachedElements.count >= options.range
-			let size = limes.approximateSize(of: value, for: key)
-			let usedMemory = limes.approximateSize(of: cacher.cachedElements)
-			guard (usedMemory + size < limes.max) || canBeFreed || limes.max == 0.0 else {
-				print("Used: \(usedMemory), size: \(size),  max: \(limes.max)")
+		if checkResultSize, let limit = cacher.limit as? Cacher.Limit.Memory {
+			let canBeFreed = cacher.cachedKeys.count >= options.range
+			let size = limit.approximateSize(of: value, for: key)
+			let usedMemory = limit.approximateSize(of: cacher.cachedKeys)
+			guard (usedMemory + size < limit.max) || canBeFreed || limit.max == 0.0 else {
+				print("Used: \(usedMemory), size: \(size),  max: \(limit.max)")
 				print("Range not full or size may still be unkown! Prefetcher return.")
 				return
 			}

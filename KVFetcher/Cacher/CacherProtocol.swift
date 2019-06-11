@@ -8,22 +8,23 @@ public protocol KVCacher_Protocol: class, KeyValueProtocol {
 	/// Results that are cached already are stored here.
 	var _cacheDict: [Key: DatedValue] { get set }
 	
-	/// If memory limes is used, sizes of values (cached or not) are stored here.
+	/// If memory limit is used, sizes of values (cached or not) are stored here.
 	var _valueSizeCacheDict: [Key: Double] { get set }
 	
 	/// Maximum allowed age of cached value before it's removed.
 	var maxAge: Double? { get set }
 	
-	/// Limes defines how storage is limited (by count or by memory size).
-	var limes: Limes? { get set }
+	/// Limit defines how storage is limited (by count or by memory size).
+	var limit: Limit? { get set }
 }
 
 
 extension KVCacher_Protocol {
-	public typealias Limes = KVCacher<Key, Value>.Limes
+	public typealias Limit = KVCacher<Key, Value>.Limit
 	public typealias DatedValue = (value: Value, dateAdded: Date)
+    public typealias CacheDict = [Key: DatedValue]
 	
-	private var cachedElementsAndResults: [(Key, Value)] {
+	private var cachedKeysAndResults: [(Key, Value)] {
 		removeExpired()
 		return _cacheDict.map { ($0.key, $0.value.value) }
 	}
@@ -32,13 +33,13 @@ extension KVCacher_Protocol {
 	// MARK: - Getting
 	
 	/// Used to retrieve all cached objects
-	public var cachedResults: [Value] {
+	public var cachedValues: [Value] {
 		removeExpired()
 		return _cacheDict.map { $0.value.value }
 	}
 	
 	/// Used to retrieve cached object (if available) from cachers memory
-	public func cachedResult(for key: Key) -> Value? {
+	public func cachedValue(for key: Key) -> Value? {
 		guard let candidate = _cacheDict[key] else { return nil }
 		if let maxAge = maxAge, Date().timeIntervalSince(candidate.dateAdded) > maxAge {
 			_cacheDict.removeValue(forKey: key)
@@ -48,7 +49,7 @@ extension KVCacher_Protocol {
 	}
 	
 	/// Returns all the cached values
-	public var cachedElements: [Key] {
+	public var cachedKeys: [Key] {
 		removeExpired()
 		return _cacheDict.map { $0.key }
 	}
@@ -58,7 +59,7 @@ extension KVCacher_Protocol {
 		return _valueSizeCacheDict[key]
 	}
 	
-	/// Returns value size for key. Returns nil if it was never calculated before.
+	/// Caches a size (memory footprint) for specific key.
 	public func cache(size: Double, for key: Key) {
 		_valueSizeCacheDict[key] = size
 	}
@@ -67,15 +68,15 @@ extension KVCacher_Protocol {
 	// MARK: - Checking
 	
 	/// Used to check if there's a specific key in cachers memory
-	public func has(cachedResultFor key: Key) -> Bool {
-		return cachedResult(for: key) != nil
+	public func has(cachedValueFor key: Key) -> Bool {
+		return cachedValue(for: key) != nil
 	}
 	
 	// MARK: - Removing
 	
 	/// Used to remove all the cached objects from cachers memory.
 	public func removeAllResults() {
-		cachedElements.forEach(removeResult)
+		cachedKeys.forEach(removeResult)
 	}
 	
 	/// Used to remove cached object for specific key (if found)
@@ -100,31 +101,31 @@ extension KVCacher_Protocol {
 	// MARK: - Caching (saving to cache)
 	
 	@discardableResult // LIMES
-	public func cache(_ value: Value?, removingAllowed: Bool, for key: Key) -> Bool {
-		guard let value = value else { return false }
+	public func cache(_ value: Value, removingAllowed: Bool = true, for key: Key) -> Bool {
+		//guard let value = value else { return false }
 		// Go through this switch and see if caching survives:
-		switch limes {
-		case let limes as Limes.Count:
-			if cachedElements.count >= limes.max {
-				guard removingAllowed && limes.max > 0 else {
+		switch limit {
+		case let limit as Limit.Count:
+			if cachedKeys.count >= limit.max {
+				guard removingAllowed && limit.max > 0 else {
 					print("Full and can't remove!.")
 					return false
 				}
-				while cachedElements.count >= limes.max {
+				while cachedKeys.count >= limit.max {
 					let sortedCacheDict = _cacheDict.sorted { $0.value.dateAdded < $1.value.dateAdded }
 					let keyToRemove = sortedCacheDict.first?.key
 					//print("Removing \(keyToRemove!.assetid)")
 					removeResult(for: keyToRemove)
 				}
 			}
-		case let limes as Limes.Memory:
-			let size = limes.approximateSize(of: value, for: key)
-			var usedMemory: Double { return limes.approximateSize(of: _cacheDict.map { $0.key }) }
-			guard size < limes.max else {
+		case let limit as Limit.Memory:
+			let size = limit.approximateSize(of: value, for: key)
+			var usedMemory: Double { return limit.approximateSize(of: _cacheDict.map { $0.key }) }
+			guard size < limit.max else {
 				print("It could never fit! Don't even try.")
 				return false
 			}
-			if usedMemory + size >= limes.max {
+			if usedMemory + size >= limit.max {
 				guard removingAllowed else {
 					print("Full and can't remove!. Don't try.")
 					return false
@@ -137,7 +138,7 @@ extension KVCacher_Protocol {
 						//return false
 					}
 					removeResult(for: key)
-				} while usedMemory + size >= limes.max
+				} while usedMemory + size >= limit.max
 			}
 		default: break
 		}

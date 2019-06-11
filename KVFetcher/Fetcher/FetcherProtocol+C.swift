@@ -23,7 +23,7 @@ extension KVFetcher_Caching_Protocol where Cacher.Key == Key, Cacher.Value == Va
 		completion: ValueCompletion!
 		) {
 		let ignoreCached = cachingOptions.contains(.ignoreCached)
-		if !ignoreCached, let existing = cacher.cachedResult(for: key) {
+		if !ignoreCached, let existing = cacher.cachedValue(for: key) {
 			completion?(existing)
 			return
 		}
@@ -43,13 +43,13 @@ extension KVFetcher_Caching_Protocol where Cacher.Key == Key, Cacher.Value == Va
 	}
 	
 	
-	/// Cached: Fetches and caches multiple keys (back to back, using queueing as .next).
+	/// KVFetcher_Caching_Protocol:: Fetches and caches multiple keys (back to back, using queueing as .next).
 	public func fetchMultiple(
 		_ keys: [Key],
 		cachingOptions: CachingOptions = [],
-		completion: ValueArrayCompletion?
+		completion: ValueArrayCompletion!
 		) {
-		var fetched: [Int: Value?] = .init()
+		var fetched: [Int: Value] = .init()
 		var completion = completion
 		for (index, key) in keys.enumerated() {
 			fetchValue(for: key, priority: .next, cachingOptions: cachingOptions) { value in
@@ -66,14 +66,14 @@ extension KVFetcher_Caching_Protocol where Cacher.Key == Key, Cacher.Value == Va
 	}
 	
 	
-	/// Cached: Fetches and returns the value synchronously (instead of a completion closure).
+	/// KVFetcher_Caching_Protocol: Returns fetched value synchronously. Blocks the main thread until the value is fetched.
 	@discardableResult
 	public func fetchSynchronously(
 		_ key: Key,
 		priority: Priority = .now,
 		cachingOptions: CachingOptions = [],
 		timeout: Double? = nil
-		) -> Value? {
+		) -> Value {
 		let task: (ValueSyncer.Semaphore) -> Void = { semaphore in
 			self.fetchValue(for: key,
 							priority: priority,
@@ -82,5 +82,10 @@ extension KVFetcher_Caching_Protocol where Cacher.Key == Key, Cacher.Value == Va
 		}
 		return ValueSyncer.waitFor(timeout: timeout, task: task)!
 	}
+    
+    /// GET: Fetches synchronously (priority=now, no caching options)
+    public subscript(key: Key) -> Value {
+        return fetchSynchronously(key)
+    }
 	
 }
