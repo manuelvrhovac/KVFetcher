@@ -1,6 +1,8 @@
 
 ![logo](https://github.com/manuelvrhovac/resources/blob/master/kvfetcher_logo.jpg?raw=true)
+
 #  Description
+
 Use `KVFetcher` and its subclasses to easily fetch, cache and even pre-fetch things that take time to load. Some examples: images from Photos library, images from the internet, JSON objects, reading files from disk... 
 
 ### Features:
