@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6429605323158B8800DB8D49 /* Ext+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6429605123158A8000DB8D49 /* Ext+Foundation.swift */; };
-		6429605423158B8800DB8D49 /* Ext+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6429605223158A8000DB8D49 /* Ext+String.swift */; };
+		6429605523158FC100DB8D49 /* Ext+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6429602723155A1F00DB8D49 /* Ext+Foundation.swift */; };
+		6429605623158FC100DB8D49 /* Ext+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6429602823155A1F00DB8D49 /* Ext+String.swift */; };
 		648138D622A9178200DB3021 /* KVFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 648138D422A9178200DB3021 /* KVFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6481390722A9179300DB3021 /* FetcherPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648138DF22A9179200DB3021 /* FetcherPriority.swift */; };
 		6481390822A9179300DB3021 /* ActiveFetchingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648138E022A9179200DB3021 /* ActiveFetchingOptions.swift */; };
@@ -65,8 +65,8 @@
 /* Begin PBXFileReference section */
 		6429602723155A1F00DB8D49 /* Ext+Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ext+Foundation.swift"; path = "../../../../../../LocalFolder/SwiftExtensions/Ext+Foundation.swift"; sourceTree = "<group>"; };
 		6429602823155A1F00DB8D49 /* Ext+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ext+String.swift"; path = "../../../../../../LocalFolder/SwiftExtensions/Ext+String.swift"; sourceTree = "<group>"; };
-		6429605123158A8000DB8D49 /* Ext+Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Foundation.swift"; sourceTree = "<group>"; };
-		6429605223158A8000DB8D49 /* Ext+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+String.swift"; sourceTree = "<group>"; };
+		6429605123158A8000DB8D49 /* Ext+Foundation.swiftb */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Ext+Foundation.swiftb"; sourceTree = "<group>"; };
+		6429605223158A8000DB8D49 /* Ext+String.swiftb */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Ext+String.swiftb"; sourceTree = "<group>"; };
 		648138D122A9178200DB3021 /* KVFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KVFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		648138D422A9178200DB3021 /* KVFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVFetcher.h; sourceTree = "<group>"; };
 		648138D522A9178200DB3021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,8 +135,8 @@
 		6429605023158A7700DB8D49 /* Ext */ = {
 			isa = PBXGroup;
 			children = (
-				6429605123158A8000DB8D49 /* Ext+Foundation.swift */,
-				6429605223158A8000DB8D49 /* Ext+String.swift */,
+				6429605123158A8000DB8D49 /* Ext+Foundation.swiftb */,
+				6429605223158A8000DB8D49 /* Ext+String.swiftb */,
 			);
 			path = Ext;
 			sourceTree = "<group>";
@@ -342,11 +342,11 @@
 				6481390722A9179300DB3021 /* FetcherPriority.swift in Sources */,
 				6481392222A9179300DB3021 /* CachingOptions.swift in Sources */,
 				6481391022A9179300DB3021 /* FetcherProtocol+C.swift in Sources */,
-				6429605323158B8800DB8D49 /* Ext+Foundation.swift in Sources */,
+				6429605523158FC100DB8D49 /* Ext+Foundation.swift in Sources */,
 				6481391422A9179300DB3021 /* Syncer.swift in Sources */,
 				6481392322A9179300DB3021 /* Cacher.swift in Sources */,
 				6481391222A9179300DB3021 /* FetcherProtocol.swift in Sources */,
-				6429605423158B8800DB8D49 /* Ext+String.swift in Sources */,
+				6429605623158FC100DB8D49 /* Ext+String.swift in Sources */,
 				6481390922A9179300DB3021 /* Fetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "KVFetcher"
-  s.version      = "0.8.0"
+  s.version      = "0.9.1"
   s.summary      = "A cached async key/value fetcher"
 
   # This description is used to generate tags and improve search results.
@@ -63,11 +63,11 @@ Use `KVFetcher` and its subclasses to easily fetch, cache and even pre-fetch thi
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-   s.platform     = :ios, "11.0"
+   s.platform     = :ios, "10.0"
    s.swift_versions = "4.0"
 
   #  When using multiple platforms
-   s.ios.deployment_target = "11.0"
+   s.ios.deployment_target = "10.0"
   # s.osx.deployment_target = "10.7"
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
