@@ -8,6 +8,8 @@ extension KVCacher {
 	/// Defines how Cacher's storage is limited. It could be by counting the saved values or approximating their memory footprint (by examining key or the value itself).
 	public class Limit {
         
+        public class Zero: KVCacher.Limit {}
+        
 		internal class Count: KVCacher.Limit {
 			public var max: Int
 			init(max: Int) {
@@ -65,9 +67,13 @@ extension KVCacher {
 
 // Public initializers for use:
 public extension KVCacher.Limit {
+    
+    static var zero: KVCacher.Limit.Zero {
+        return .init()
+    }
 	
 	/// Unlimited storage.
-	static var none: KVCacher.Limit {
+    static var none: KVCacher.Limit {
 		return .init()
 	}
 	

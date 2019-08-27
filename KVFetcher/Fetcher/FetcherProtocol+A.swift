@@ -94,7 +94,7 @@ extension KVFetcher_Caching_Active_Protocol where Cacher.Key == Key, Cacher.Valu
 	
 	/// Prefetches value for key only if more values can fit into the cache
 	///
-	/// In case of limited by count, it will prefetch if there's enough spots or if all spots are taken by removing oldest entries.
+	/// In case of limited by count, it will prefetch if there's enough space or by removing oldest entries.
 	///
 	/// In case of limited by memory, it will prefetch if there's enough memory and if the value would fit. If value size can be approximated by key, decision can be made immediately. If it's approximated by value, then it will be prefetched but with 'checkResultSize' set to 'true' - in this case its size will be evaluated after fetching and cached if it fits.
 	///

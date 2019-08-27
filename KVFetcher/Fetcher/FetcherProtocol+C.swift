@@ -14,7 +14,27 @@ public protocol KVFetcher_Caching_Protocol: KVFetcher_Protocol {
 
 extension KVFetcher_Caching_Protocol where Cacher.Key == Key, Cacher.Value == Value {
 	public typealias CachingOptions = KVCachingOptions
-	
+    
+    /*
+    /// KVFetcher_Protocol: Fetches and saves to cache
+    func _executeTimeoutFetchValue(for key: Key, completion: ValueCompletion!) {
+        guard let timeout = timeout else {
+            return fetchValue(for: key, completion: completion)
+        }
+        var completed = false
+        let tryCompleting: (Value) -> Void = { value in
+            guard !completed else { return }
+            completion?(value)
+            completed = true
+        }
+        fetchValue(for: key, completion: completion)
+        delay(timeout) {
+            //tryCompleting(nil)
+            fatalError()
+        }
+    }*/
+    
+    
 	/// KVFetcher.Caching.Protocol: Fetches and saves to cache with caching options
 	public func fetchValue(
 		for key: Key,
@@ -28,7 +48,7 @@ extension KVFetcher_Caching_Protocol where Cacher.Key == Key, Cacher.Value == Va
 			return
 		}
 		addToQueueOrExecute(priority: priority) {
-			self._executeTimeoutFetchValue(for: key) { value in
+            self._executeFetchValue(for: key) { value in
 				if !cachingOptions.contains(.dontCache) {
 					let removingAllowed = !cachingOptions.contains(.dontMakeSpaceIfNoSpace)
 					self.cacher.cache(value, removingAllowed: removingAllowed, for: key)
@@ -73,19 +93,25 @@ extension KVFetcher_Caching_Protocol where Cacher.Key == Key, Cacher.Value == Va
 		priority: Priority = .now,
 		cachingOptions: CachingOptions = [],
 		timeout: Double? = nil
-		) -> Value {
+		) -> Value! {
 		let task: (ValueSyncer.Semaphore) -> Void = { semaphore in
 			self.fetchValue(for: key,
 							priority: priority,
 							cachingOptions: cachingOptions,
 							completion: semaphore.signal)
 		}
-		return ValueSyncer.waitFor(timeout: timeout, task: task)!
+		return ValueSyncer.waitFor(timeout: timeout, task: task)
 	}
     
     /// GET: Fetches synchronously (priority=now, no caching options)
     public subscript(key: Key) -> Value {
-        return fetchSynchronously(key)
+        return fetchSynchronously(key)!
     }
 	
+}
+
+extension KVFetcher_Caching_Protocol where Key == Int {
+    public subscript(range: CountableRange<Int>) -> [Value] {
+        return fetchSynchronouslyMultiple(Array(range)).map { $0! }
+    }
 }

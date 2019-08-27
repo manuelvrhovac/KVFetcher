@@ -118,7 +118,6 @@ extension KVCacher_Protocol {
 				while cachedKeys.count >= limit.max {
 					let sortedCacheDict = _cacheDict.sorted { $0.value.dateAdded < $1.value.dateAdded }
 					let keyToRemove = sortedCacheDict.first?.key
-					//print("Removing \(keyToRemove!.assetid)")
 					removeResult(for: keyToRemove)
 				}
 			}
@@ -146,7 +145,6 @@ extension KVCacher_Protocol {
 			}
 		default: break
 		}
-		//print("Saving \(key.assetid)")
 		_cacheDict[key] = (value, Date())
 		return true
 	}

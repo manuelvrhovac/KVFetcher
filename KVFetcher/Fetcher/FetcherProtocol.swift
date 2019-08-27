@@ -25,6 +25,7 @@ extension KVFetcher_Protocol {
         self._queuedClosures = []
     }
     
+    /*
     /// KVFetcher_Protocol: Fetches and saves to cache
     func _executeTimeoutFetchValue(for key: Key, completion: ValueCompletion!) {
         guard let timeout = timeout else {
@@ -41,9 +42,8 @@ extension KVFetcher_Protocol {
             //tryCompleting(nil)
             fatalError()
         }
-        
     }
-    
+    */
     
     // MARK: - Private methods:
     
@@ -73,7 +73,7 @@ extension KVFetcher_Protocol {
         completion: ValueCompletion!) {
         addToQueueOrExecute(priority: priority
         ) {
-            self._executeTimeoutFetchValue(for: key) { value in
+            self._executeFetchValue(for: key) { value in
                 completion?(value)
                 if priority != .now {
                     self._queuedClosures.removeFirstIfExists()
@@ -107,6 +107,7 @@ extension KVFetcher_Protocol {
         priority: Priority = .now,
         completion: ValueArrayCompletion!
         ) {
+        guard !keys.isEmpty else { return completion([]) }
         var fetched: [Int: Value] = .init()
         var priority = priority
         var completion = completion
@@ -130,10 +131,10 @@ extension KVFetcher_Protocol {
         _ key: Key,
         priority: Priority = .now,
         timeout: Double? = nil
-        ) -> Value {
+        ) -> Value! {
         return ValueSyncer.waitFor(timeout: timeout ?? self.timeout, task: { semaphore in
             self.fetchValue(for: key, priority: priority, completion: semaphore.signal)
-        })!
+        })
     }
     
     typealias ValueSyncer = Syncer<Value?>
@@ -152,6 +153,13 @@ extension KVFetcher_Protocol {
     
     /// GET: Fetches synchronously (priority=now, no caching options)
     public subscript(key: Key) -> Value {
-        return fetchSynchronously(key)
+        return fetchSynchronously(key)!
+    }
+    
+}
+
+extension KVFetcher_Protocol where Key == Int {
+    public subscript(range: CountableRange<Int>) -> [Value] {
+        return fetchSynchronouslyMultiple(Array(range)).map { $0! }
     }
 }

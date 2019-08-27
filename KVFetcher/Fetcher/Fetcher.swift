@@ -3,7 +3,7 @@ import Foundation
 /**
 Fetches Value for specified Key. KVFetcher and its '.Caching' and '.Caching.Active' versions have to be subclassed before used
 
-To subclass start with defining the **Key** and **Value** typealiases. Continue by overriding the **_executeFetchValue** method where you will define how a Value for specific Key is returned. Then add your additional properties and an init method. You can also subclass the KVFetcher.Cached class where you also need to 
+To subclass start with defining the **Key** and **Value** typealiases. Continue by overriding the **_executeFetchValue** method where you will define how a Value for specific Key is returned. Then add your additional properties and an init method.
 */
 
 open class KVFetcher<Key: Hashable, Value>: KVFetcher_Protocol {
@@ -94,7 +94,7 @@ extension KVFetcher.CustomCaching {
      
      To subclass, add the necessary protocol stubs. Then add a new init method that initializes newly added properties.
      */
-    open class Active: Caching, KVFetcher_Caching_Active_Protocol {
+    open class Active: CustomCaching, KVFetcher_Caching_Active_Protocol {
         public var keys: [Key]
         public var currentIndex: Int
         public var options: Options

@@ -175,24 +175,50 @@ class FlagViewer: UIViewController {
 
 # Some nice-to-have's:
 
+
 ### Fetching synchronously
+
 Use `.fetchSynchronously(_:)` to fetch values synchronously (blocking the main thread until value is returned). It's nice to use when the operations inside the execution method are synchronous themselves, or if you are already on a background thread.
+
 ```swift
+
 let flagImage = flagFetcher.fetchSynchronously("de") // returns UIImage?
+
 print("Got flag image with size: \(flagImage!.size)")
+
 ```
 
-### Fetching synchronously using subscript [ ] 
-Shorter way to fetch synchronously - using square brackets:
+
+
+#### Using subscript [ ]
+
+Shorter way to fetch synchronously - using square brackets. Careful, as it force-unwraps the value!
+
+
 
 ```swift
-let germanFlag = flagFetcher["de"] // returns UIImage?
-print("Got flag image with size: \(germanFlag!.size)")
+
+let germanFlag = flagFetcher["de"] // returns UIImage
+
+print("Got flag image with size: \(germanFlag.size)")
+
 ```
+
 ### Fetch multiple values
+
 Use `.fetchMultiple(keys:completion:)` method to fetch more than one value. Completion closure (handler) is called after all values have been fetched.
 
+#### Synchronously
 
+Similar to above, use `.fetchMultipleSynchronously(keys:)` to fetch multiple values synchronously (blocking the main thread until value is returned). 
+
+#### Using subcript []
+
+To avoid having an array inside subscript (looks messy), only a range can be used as subscript to fetch multiple values. To make things simple, Key has to be Int. Example is a fetcher that feches assets from `PHFetchResult<PHAsset>` object:
+
+```swift
+let myAssets: [PHAsset] = assetFetcher[0..<100] // returns array of PHAsset ready to use
+```
 
 ### Retrieving values from cache manually
 Use `.cachedValue(for:)` on `cacher` property of a caching fetcher to retrieve a value from the cache (given it has been fetched/cached before). In case it doesn't exists nil is returned. Use `.has(cachedValueFor:)` to check for existance.
