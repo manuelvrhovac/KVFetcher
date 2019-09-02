@@ -100,6 +100,7 @@
 		6494138D22A93C1500C55FA1 /* EFCustomFetcher.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EFCustomFetcher.swiftb; sourceTree = "<group>"; };
 		6494138E22A93C1500C55FA1 /* EFFectherBackup.swiftb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EFFectherBackup.swiftb; sourceTree = "<group>"; };
 		649413AB22AE3D2300C55FA1 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		64AB45C2231CF3E900722CA6 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		64CF3B4322A9367200871ACE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +145,7 @@
 		648138C722A9178200DB3021 = {
 			isa = PBXGroup;
 			children = (
+				64AB45C2231CF3E900722CA6 /* Package.swift */,
 				648138D322A9178200DB3021 /* KVFetcher */,
 				6494137D22A93C1500C55FA1 /* Backup */,
 				648138D222A9178200DB3021 /* Products */,
