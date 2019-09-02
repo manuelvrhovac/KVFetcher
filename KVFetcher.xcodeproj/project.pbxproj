@@ -146,9 +146,11 @@
 			isa = PBXGroup;
 			children = (
 				64AB45C2231CF3E900722CA6 /* Package.swift */,
-				648138D322A9178200DB3021 /* KVFetcher */,
+				648138D322A9178200DB3021 /* Sources */,
 				6494137D22A93C1500C55FA1 /* Backup */,
 				648138D222A9178200DB3021 /* Products */,
+				648138D422A9178200DB3021 /* KVFetcher.h */,
+				648138D522A9178200DB3021 /* Info.plist */,
 				649413AB22AE3D2300C55FA1 /* LICENSE.md */,
 				64CF3B4322A9367200871ACE /* README.md */,
 				6481395122A9185B00DB3021 /* .swiftlint.yml */,
@@ -163,7 +165,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		648138D322A9178200DB3021 /* KVFetcher */ = {
+		648138D322A9178200DB3021 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				6429605023158A7700DB8D49 /* Ext */,
@@ -171,10 +173,8 @@
 				648138DD22A9179200DB3021 /* Fetcher */,
 				648138FE22A9179200DB3021 /* Cacher */,
 				6429602B23155A4D00DB8D49 /* Other Classes */,
-				648138D422A9178200DB3021 /* KVFetcher.h */,
-				648138D522A9178200DB3021 /* Info.plist */,
 			);
-			path = KVFetcher;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		648138DD22A9179200DB3021 /* Fetcher */ = {
@@ -493,7 +493,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = KVFetcher/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -526,7 +526,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = KVFetcher/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
